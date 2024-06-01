@@ -1,0 +1,15 @@
+.labeledInput {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+input {
+    background-color: #121015;
+    border: none;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none !important;
+}
