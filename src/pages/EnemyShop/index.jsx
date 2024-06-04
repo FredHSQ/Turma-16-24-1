@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const EnemyShop = () => {
+    const [enemyList, setEnemyList] = useState([
+        { name: 'vilao1' },
+        { name: 'vilao2' },
+        { name: 'vilao3' },
+        { name: 'vilao4' }
+    ]);
+
     return <div>
-        <div>
-            Vilões1
-        </div>
-        <div>
-            Vilões2
-        </div>
-        <div>
-            Vilões3
-        </div>
-        <div>
-            Vilões4
-        </div>
+        {
+            enemyList.map(enemy => {
+                return <div>
+                    {enemy.name}
+                </div>
+            })
+        }
     </div>
 };
