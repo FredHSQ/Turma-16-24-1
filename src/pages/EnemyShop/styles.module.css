@@ -1,0 +1,15 @@
+.enemyList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: auto;
+}
+
+.enemy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.3rem;
+    width: 15rem;
+    border: 1px solid;
+    border-color: black;
+}
