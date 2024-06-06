@@ -1,0 +1,14 @@
+.enemy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.3rem;
+    width: 15rem;
+    border: 1px solid;
+    border-color: black;
+}
+
+img {
+    height: 3rem;
+    width: 3rem;
+}

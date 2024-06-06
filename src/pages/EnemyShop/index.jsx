@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { getEnemyList } from "../../services/enemyApi";
 import styles from './styles.module.css';
+import { Enemy } from "../../components/Enemy";
+import { Link } from "react-router-dom";
+import { FavEnemyContext } from "../../context/favEnemyContext";
 
 export const EnemyShop = () => {
     const [enemyList, setEnemyList] = useState([
@@ -10,6 +13,10 @@ export const EnemyShop = () => {
         { name: 'vilao4' }
     ]);
     const [loading, setLoading] = useState(true);
+
+    useEffect(()=>{
+        getApiData();
+    },[]);
 
     async function getApiData() {
         try {
@@ -21,10 +28,6 @@ export const EnemyShop = () => {
         }
     }
 
-    useEffect(()=>{
-        getApiData();
-    },[]);
-
     if(loading) {
         return <div>
             Carregando...
@@ -32,11 +35,12 @@ export const EnemyShop = () => {
     }
     
     return <div className={styles.enemyList}>
+        <Link to={'../FavEnemy'}>
+            Go to Fav
+        </Link>
         {
-            enemyList.map(enemy => {
-                return <div className={styles.enemy}>
-                    {enemy.name}
-                </div>
+            enemyList.map((enemy, index) => {
+                return <Enemy key={index} enemy={enemy}/>
             })
         }
     </div>
